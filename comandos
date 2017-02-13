@@ -1,0 +1,3 @@
+./yowsup-cli demos -c config -s 5521xxxxxxxxx "Oi, mozão, do computador"
+./yowsup-cli registration --requestcode sms --mcc 724 --mnc 10 --cc 55 --phone 5521xxxxxxxxx --debug
+./yowsup-cli registration --register 123456 --cc 55 --phone 5521xxxxxxxxx --debug

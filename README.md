@@ -96,3 +96,18 @@ Thanks!
 # License:
 
 As of January 1, 2015 yowsup is licensed under the GPLv3+: http://www.gnu.org/licenses/gpl-3.0.html.
+
+##########FIXING ERRO WHEN SEND non ascii character
+File "/usr/lib/python2.7/dist-packages/google/protobuf/internal/type_checkers.py", line 166, in CheckValue
+    (proposed_value))
+
+ValueError: '\xe2\x80\x9cMENSAGEM\xe2\x80\x9d' has type bytes, but isn't in 7-bit ASCII encoding. Non-ASCII strings must be converted to unicode objects before being added.
+
+1. Open file
+        nano -c /usr/lib/python2.7/dist-packages/google/protobuf/internal/type_checkers.py
+
+2. Find line 161
+        CTRL+SHIFT+_ 161
+
+3. Change value 'ascii' for utf-8'
+       De proposed_value = proposed_value.decode('ascii') para proposed_value = proposed_value.decode('utf-8') 
